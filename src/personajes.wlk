@@ -1,11 +1,13 @@
 import frutas.*
+import colores.*
 
 object martin {
-	var energia = 0
+	var energia = 100
 	var actividadesDia = 0
 	var tieneHambre = false
 	var despensa = vasoDeAgua
 	
+	method energia() = energia
 	method estaFeliz() = (energia > 80 || actividadesDia >= 2) && not tieneHambre
 	method hacerLasCompras(unaFruta) {despensa=unaFruta}
 	method alimentarse() {
@@ -14,10 +16,29 @@ object martin {
 		tieneHambre = false
 	}
 	method hacerDeporte(unDeporte,cantMinutos) {
+		actividadesDia ++
 		tieneHambre = true
-		energia -= unDeporte.energiaQueResta(cantMinutos)
-		
+		energia = 0.max(energia - unDeporte.energiaQueResta(cantMinutos))
 	}
+	method irADormir() {
+		energia += energia * 0.5
+		actividadesDia = 0
+		despensa.nuevoDia()
+	}	
+}
+
+object maria {
+	var property colorDelAmuleto = rojo
+	var endorfina = 100
 	
-	
+	method energia() = 2 * endorfina + colorDelAmuleto.energia()
+	method hacerDeporte(unDeporte,cantMinutos) {
+		endorfina = 0.max(endorfina - unDeporte.energiaQueResta(cantMinutos))
+	}
+	method estaFeliz() = endorfina > colorDelAmuleto.energia()	
+}
+
+object pepe {
+	method estaFeliz() = true
+	method energia() = 77
 }

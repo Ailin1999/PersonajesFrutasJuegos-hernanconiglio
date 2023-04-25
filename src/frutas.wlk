@@ -10,6 +10,7 @@ object manzana {
 
 object mandarina {
 	var peso = 60
+	method color() = naranja
 	method peso() = peso
 	method energiaQueProvee() = (peso.div(10)) * 2
 	method nuevoDia() {peso -= peso * 0.1}
@@ -23,4 +24,5 @@ object banana {
 
 object vasoDeAgua {
 	method energiaQueProvee() = 0
+	method nuevoDia() {}
 }
