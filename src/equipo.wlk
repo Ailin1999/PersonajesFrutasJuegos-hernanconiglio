@@ -1,17 +1,21 @@
+import personajes.*
+import juegos.*
+import frutas.*
+
 object equipo {
-	var jugadorIzquierdo
-	var jugadorDerecho
-	var directorTecnico
+	var property jugadorIzquierdo
+	var property jugadorDerecho
+	var property directorTecnico
 	
-	method asignarJugadorIzquierdo(unaPersona) {jugadorIzquierdo=unaPersona}
-	method asignarJugadorDerecho(unaPersona) {jugadorDerecho=unaPersona}
-	method asignarDirectorTecnico(unaPersona) {directorTecnico=unaPersona}
 	method hacerRotacionJugadores() {
-		self.asignarJugadorIzquierdo(jugadorDerecho)
-		self.asignarJugadorDerecho(jugadorIzquierdo)
+		self.cambiarJugadores(jugadorDerecho,jugadorIzquierdo)
+	}
+	method cambiarJugadores(nuevoIzquierdo,nuevoDerecho) {
+		self.jugadorIzquierdo(nuevoIzquierdo)
+		self.jugadorDerecho(nuevoDerecho)
 	}
 	method incorporarNuevoTecnico(unaPersona) {
-		if(unaPersona.energia() > directorTecnico) directorTecnico = unaPersona
+		if(unaPersona.energia() > directorTecnico.energia()) directorTecnico = unaPersona
 	}
 	method promedioEnergiaEquipo() = 
 		(

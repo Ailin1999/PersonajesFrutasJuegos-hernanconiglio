@@ -1,5 +1,6 @@
 import frutas.*
 import colores.*
+import juegos.*
 
 object martin {
 	var energia = 100
@@ -7,6 +8,7 @@ object martin {
 	var tieneHambre = false
 	var despensa = vasoDeAgua
 	
+	method despensa() = despensa
 	method energia() = energia
 	method estaFeliz() = (energia > 80 || actividadesDia >= 2) && not tieneHambre
 	method hacerLasCompras(unaFruta) {despensa=unaFruta}
@@ -41,4 +43,5 @@ object maria {
 object pepe {
 	method estaFeliz() = true
 	method energia() = 77
+	method hacerDeporte(unDeporte,cantMinutos) {}
 }
