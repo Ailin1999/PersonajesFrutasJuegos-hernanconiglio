@@ -1,0 +1,52 @@
+import personajes.*
+import frutas.*
+import juegos.*
+
+test "al inicio la despensa de martin tiene un vaso de agua" {
+
+	assert.equals(vasoDeAgua , martin.despensa())
+
+}
+
+test "martin come una manzana verde y queda con 107 de energia"
+{
+	martin.hacerLasCompras(manzana)
+	martin.alimentarse()
+	assert.equals(107,martin.energia())
+}
+
+test "martin se alimenta con una manzana que compro ayer entonces queda con energia 164" {
+	martin.hacerLasCompras(manzana)
+	martin.irADormir()
+	martin.alimentarse()
+	assert.equals(164 , martin.energia())
+
+}
+
+test "martin practica deporte y ya no esta feliz porque tiene hambre"{
+	martin.hacerDeporte(voley , 45)
+	assert.notThat(martin.estaFeliz())
+}
+
+
+test "maria con endorfina en 100 y un amuleto rojo tiene una energia de 214"{
+	assert.equals (214, maria.energia())
+}
+
+test " maria esta feliz porque su endorfina es mayor a la que aporta el amuleto"
+{
+	assert.that(maria.estaFeliz())
+}
+
+test " pepe es feliz"{
+	assert.that(pepe.estaFeliz())
+}
+
+
+test "como hace 10° en la ciudad, maria hace aerobic y su energia sube apenas a 224" {
+	ciudad.temperatura(10)
+	maria.hacerDeporte(aerobic,60)
+	assert.equals(224,maria.energia())
+}
+
+

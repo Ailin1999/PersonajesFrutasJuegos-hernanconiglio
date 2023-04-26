@@ -1,0 +1,39 @@
+import frutas.*
+import colores.*
+
+
+test "manzana roja aporta 14" {
+    manzana.nuevoDia()
+	assert.equals(14 , manzana.energiaQueProvee())
+
+}
+
+test "mandarina reseca provee un valor de 10.8" {
+    manzana.nuevoDia()
+	assert.equals(14 , manzana.energiaQueProvee())
+
+}
+
+
+test "mandarina reseca de 2 días provee valor de 8" {
+    mandarina.nuevoDia()
+    mandarina.nuevoDia()
+	assert.equals(8 , mandarina.energiaQueProvee())
+
+}
+
+
+
+
+
+test "banana provee 5" {
+    
+	assert.equals(5 , banana.energiaQueProvee())
+
+}
+
+test "vaso con agua consulta el valor que otorga y es 0" {
+    
+	assert.equals(0 , vasoDeAgua.energiaQueProvee())
+
+}

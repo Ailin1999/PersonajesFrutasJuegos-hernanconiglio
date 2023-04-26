@@ -1,0 +1,50 @@
+import equipo.*
+import personajes.*
+
+test "martin es asignado como jugador derecho" {
+    
+    equipo.jugadorDerecho(martin)
+	assert.equals(martin , equipo.jugadorDerecho())
+
+}
+
+
+test "maria es asignada como jugador izquierdo" {
+    
+    equipo.jugadorIzquierdo(maria)
+	assert.equals(maria, equipo.jugadorIzquierdo())
+
+}
+
+
+test "pepe es asignado como director tecnico" {
+    
+    equipo.directorTecnico(pepe)
+	assert.equals(pepe, equipo.directorTecnico())
+
+}
+
+test "rotan y martin pasa a ser el izquierdo y maria derecho"{
+	 equipo.jugadorDerecho(martin)
+	 equipo.jugadorIzquierdo(maria)
+	 equipo.hacerRotacionJugadores()
+	 assert.equals(maria , equipo.jugadorDerecho())
+	 assert.equals(martin , equipo.jugadorIzquierdo())
+	 
+}
+
+test "el promedio de energia con equipo martin, maria y pepe es "{
+	equipo.jugadorDerecho(martin)
+	equipo.jugadorIzquierdo(maria)
+	equipo.directorTecnico(pepe)
+	
+	assert.equals(168.33333,equipo.promedioEnergiaEquipo() ) 
+}
+
+test "el equipo esta feliz cuando todos los miembros del equipo estan feliz"{
+	equipo.jugadorDerecho(martin)
+	equipo.jugadorIzquierdo(maria)
+	equipo.directorTecnico(pepe)
+	assert.that(equipo.equipoFeliz())
+	
+}
