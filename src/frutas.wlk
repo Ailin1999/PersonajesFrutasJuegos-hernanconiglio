@@ -17,8 +17,7 @@ object mandarina {
 }
 
 object banana {
-	method color() = amarillo
-	method energiaQueProvee() = self.color().energia()
+	method energiaQueProvee() = amarillo.energia()
 	method nuevoDia() {}
 }
 

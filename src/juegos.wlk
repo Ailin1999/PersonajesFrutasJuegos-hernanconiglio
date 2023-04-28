@@ -11,7 +11,7 @@ object voley {
 }
 
 object aerobic {
-	method energiaQueResta(minutos) = (ciudad.temperatura() / 2) * (-1)
+	method energiaQueResta(minutos) = -(ciudad.temperatura() / 2)
 }
 
 object basquet {

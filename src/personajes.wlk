@@ -10,7 +10,7 @@ object martin {
 	
 	method despensa() = despensa
 	method energia() = energia
-	method estaFeliz() = (energia > 80 || actividadesDia >= 2) && not tieneHambre
+	method estaFeliz() = (energia > 80 || actividadesDia >= 2) && !tieneHambre
 	method hacerLasCompras(unaFruta) {despensa=unaFruta}
 	method alimentarse() {
 		energia += despensa.energiaQueProvee()
